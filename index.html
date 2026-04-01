@@ -1,347 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
+<section id="publications" style="background-color: #f4f7f6;">
+  <h2 class="section-title">Publications</h2>
+  <div class="card-grid">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Michael Maravgakis | Robotics Software Engineer</title>
-  <style>
-    /* Base Styles & Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    }
-
-    body {
-      background-color: #f4f7f6;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-      transition: color 0.3s ease;
-    }
-
-    /* Navigation */
-    nav {
-      background-color: #ffffff;
-      padding: 20px 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    nav .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #2c3e50;
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 30px;
-    }
-
-    nav ul li a {
-      font-weight: 500;
-      color: #555;
-    }
-
-    nav ul li a:hover {
-      color: #3498db;
-    }
-
-    /* Hero Section (Photo + Intro) */
-    .hero {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 100px 10%;
-      background: linear-gradient(135deg, #ffffff 0%, #e8f0fe 100%);
-    }
-
-    .hero-content {
-      max-width: 60%;
-    }
-
-    .hero-content h1 {
-      font-size: 3rem;
-      color: #2c3e50;
-      margin-bottom: 10px;
-    }
-
-    .hero-content h2 {
-      font-size: 1.5rem;
-      color: #3498db;
-      font-weight: 400;
-      margin-bottom: 20px;
-    }
-
-    .hero-content p {
-      font-size: 1.1rem;
-      color: #666;
-      margin-bottom: 30px;
-    }
-
-    .hero-image {
-      max-width: 35%;
-      text-align: right;
-    }
-
-    /* Make sure your image is named profile.jpg or change the src below */
-    .hero-image img {
-      width: 100%;
-      max-width: 350px;
-      border-radius: 50%;
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-      border: 5px solid #fff;
-    }
-
-    /* Buttons */
-    .btn {
-      display: inline-block;
-      padding: 12px 28px;
-      background-color: #2c3e50;
-      color: #fff;
-      border-radius: 30px;
-      font-weight: 600;
-      margin-right: 15px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .btn:hover {
-      background-color: #3498db;
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      background-color: transparent;
-      border: 2px solid #2c3e50;
-      color: #2c3e50;
-    }
-
-    .btn-outline:hover {
-      background-color: #2c3e50;
-      color: #fff;
-    }
-
-    /* Section Layouts */
-    section {
-      padding: 80px 10%;
-    }
-
-    .section-title {
-      font-size: 2.2rem;
-      color: #2c3e50;
-      margin-bottom: 40px;
-      text-align: center;
-    }
-
-    .section-title::after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 4px;
-      background-color: #3498db;
-      margin: 15px auto 0;
-      border-radius: 2px;
-    }
-
-    /* Experience & Projects (Grid Cards) */
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-
-    .card {
-      background-color: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border-top: 4px solid #3498db;
-    }
-
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    .card h3 {
-      color: #2c3e50;
-      margin-bottom: 10px;
-      font-size: 1.3rem;
-    }
-
-    .card .date {
-      font-size: 0.9rem;
-      color: #999;
-      margin-bottom: 15px;
-      display: block;
-    }
-
-    /* Footer & Logo */
-    footer {
-      background-color: #2c3e50;
-      color: #fff;
-      text-align: center;
-      padding: 50px 10%;
-    }
-
-    /* Make sure your logo is named logo.png or change the src below */
-    .footer-logo {
-      max-width: 150px;
-      margin-bottom: 20px;
-      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
-    }
-
-    .social-links {
-      margin: 20px 0;
-    }
-
-    .social-links a {
-      margin: 0 15px;
-      color: #bdc3c7;
-      font-size: 1.1rem;
-    }
-
-    .social-links a:hover {
-      color: #fff;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .hero {
-        flex-direction: column-reverse;
-        text-align: center;
-        padding: 60px 5%;
-      }
-
-      .hero-content {
-        max-width: 100%;
-        margin-top: 40px;
-      }
-
-      .hero-image {
-        max-width: 100%;
-        text-align: center;
-      }
-
-      nav ul {
-        display: none;
-        /* Consider adding a hamburger menu for mobile later */
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <nav>
-    <div class="logo">M. Maravgakis</div>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#publications">Publications</a></li>
-      <li><a href="#skills">Skills</a></li>
-    </ul>
-  </nav>
-
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Michael Maravgakis</h1>
-      <h2>Robotics Software Engineer & PhD Candidate</h2>
-      <p>Specializing in autonomous mobile robots, legged locomotion, and state estimation. Bridging the gap between
-        cutting-edge research and practical robotic applications.</p>
-      <a href="#experience" class="btn">View My Work</a>
-      <a href="mailto:maravgakis@ics.forth.gr" class="btn btn-outline">Contact Me</a>
+    <div class="card" style="border-top-color: #9b59b6;">
+      <h3><a href="https://scholar.google.com/citations?user=7yJy-0QAAAAJ&hl=en" target="_blank">Optimal Torque
+          Distribution via Dynamic Adaptation for Quadrupedal Locomotion on Slippery Terrains</a></h3>
+      <span class="date">ICRA | 2025</span>
+      <p>DE Argiropoulos, M Maravgakis, C Tian, D Papageorgiou, P Trahanias</p>
     </div>
-    <div class="hero-image">
-      <img src="profile.jpg" alt="Michael Maravgakis">
+
+    <div class="card" style="border-top-color: #9b59b6;">
+      <h3><a href="https://scholar.google.com/citations?user=7yJy-0QAAAAJ&hl=en" target="_blank">VR Isle academy: a VR
+          digital twin approach for robotic surgical skill development</a></h3>
+      <span class="date">Computer Graphics International Conference | 2024</span>
+      <p>A Filippidis, N Marmaras, M Maravgakis, A Plexousaki, M Kamarianakis...</p>
     </div>
-  </header>
 
-  <section id="about">
-    <h2 class="section-title">About Me</h2>
-    <p style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1rem; color: #555;">
-      I am a PhD candidate at the Computer Science Department of the University of Crete. My primary research focuses on
-      autonomous mobile robots, with a deep dive into legged locomotion and state estimation. Currently, I am applying
-      my academic research to real-world problems as a Robotics Software Engineer at the Computational Vision and
-      Robotics Laboratory (FORTH). Alongside legged robots, I have extensive hands-on experience with UAVs, robotic
-      arms, and wheeled robotic platforms.
-    </p>
-  </section>
-
-  <section id="experience" style="background-color: #ffffff;">
-    <h2 class="section-title">Work Experience</h2>
-    <div class="card-grid">
-
-      <div class="card">
-        <h3>Robotics Software Engineer</h3>
-        <span class="date">Computational Vision and Robotics Lab (FORTH) | Jan 2023 - Present</span>
-        <p>Solving state-of-the-art research problems in robotics. Actively developing for funded research projects,
-          publishing papers, and mentoring undergraduate students in the lab.</p>
-      </div>
-
-      <div class="card">
-        <h3>Robotics Software Engineer (Freelance)</h3>
-        <span class="date">ORamaVR (Geneva, Switzerland) | Sep 2023 - Apr 2025</span>
-        <p>Developing medical training simulations for surgical robotic systems in Virtual Reality. Integrating
-          exoskeleton hardware with VR software environments.</p>
-      </div>
-
-      <div class="card">
-        <h3>Research Assistant</h3>
-        <span class="date">Computational Vision and Robotics Lab (FORTH) | Sep 2020 - Dec 2022</span>
-        <p>Developed software for various robotic platforms including UAVs, robotic arms, humanoids, and industrial
-          robots while contributing to advanced research solutions.</p>
-      </div>
-
+    <div class="card" style="border-top-color: #9b59b6;">
+      <h3><a href="https://scholar.google.com/citations?user=7yJy-0QAAAAJ&hl=en" target="_blank">Probabilistic Contact
+          State Estimation for Legged Robots using Inertial Information</a></h3>
+      <span class="date">ICRA | 2023</span>
+      <p>M Maravgakis, DE Argiropoulos, S Piperakis, P Trahanias</p>
+      <p style="margin-top: 10px; font-size: 0.9em; color: #7f8c8d;"><strong>Cited by:</strong> 34</p>
     </div>
-  </section>
 
-  <section id="education">
-    <h2 class="section-title">Academic Background</h2>
-    <div class="card-grid">
-      <div class="card" style="border-top-color: #2ecc71;">
-        <h3>PhD in Robotics</h3>
-        <span class="date">University of Crete | Jan 2024 - Present</span>
-      </div>
-      <div class="card" style="border-top-color: #2ecc71;">
-        <h3>MSc in Computer Science & Engineering</h3>
-        <span class="date">University of Crete | Sep 2021 - Jul 2023</span>
-        <p>Specialization in Robotics and Computer Vision. Thesis: <em>Contact State Estimation for Legged Robots</em>.
-        </p>
-      </div>
-      <div class="card" style="border-top-color: #2ecc71;">
-        <h3>BSc in Physics</h3>
-        <span class="date">University of Crete | Sep 2014 - Sep 2020</span>
-        <p>Thesis: <em>Autonomous Robot Navigation with Artificial Potential Fields</em>.</p>
-      </div>
+    <div class="card" style="border-top-color: #9b59b6;">
+      <h3><a href="https://scholar.google.com/citations?user=7yJy-0QAAAAJ&hl=en" target="_blank">Two-layer adaptive
+          trajectory tracking controller for quadruped robots on slippery terrains</a></h3>
+      <span class="date">Humanoids | 2023</span>
+      <p>DE Argiropoulos, D Papageorgiou, M Maravgakis, D Drosakis...</p>
     </div>
-  </section>
 
-  <footer>
-    <img src="logo.png" alt="Maravgakis Logo" class="footer-logo">
-
-    <div class="social-links">
-      <a href="https://github.com/MichaelMarav" target="_blank">GitHub</a> |
-      <a href="https://www.linkedin.com/in/maravgakis/" target="_blank">LinkedIn</a> |
-      <a href="https://www.youtube.com/@MichaelMaravgakis" target="_blank">YouTube</a>
+    <div class="card" style="border-top-color: #9b59b6;">
+      <h3><a href="https://scholar.google.com/citations?user=7yJy-0QAAAAJ&hl=en" target="_blank">Robust Contact State
+          Estimation in Humanoid Walking Gaits</a></h3>
+      <span class="date">IROS | 2022</span>
+      <p>S Piperakis, M Maravgakis, D Kanoulas, P Trahanias</p>
+      <p style="margin-top: 10px; font-size: 0.9em; color: #7f8c8d;"><strong>Cited by:</strong> 11</p>
     </div>
-    <p>&copy; 2026 Michael Maravgakis. All rights reserved.</p>
-  </footer>
 
-</body>
+  </div>
 
-</html>
+  <div style="text-align: center; margin-top: 40px;">
+    <a href="https://scholar.google.com/citations?user=7yJy-0QAAAAJ&hl=en" target="_blank" class="btn">View Full Profile
+      on Google Scholar</a>
+  </div>
+</section>
