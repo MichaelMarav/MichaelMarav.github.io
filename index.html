@@ -29,7 +29,7 @@
     /* Navigation */
     nav {
       background-color: #ffffff;
-      padding: 20px 5%;
+      padding: 10px 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -39,16 +39,12 @@
       z-index: 1000;
     }
 
-    nav .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #2c3e50;
-    }
-
     nav ul {
       display: flex;
       list-style: none;
       gap: 30px;
+      margin: 0;
+      padding: 0;
     }
 
     nav ul li a {
@@ -58,6 +54,17 @@
 
     nav ul li a:hover {
       color: #3498db;
+    }
+
+    .nav-right-banner {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-right-banner img {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
     }
 
     /* Hero Section (Photo + Intro) */
@@ -97,7 +104,6 @@
       text-align: right;
     }
 
-    /* Make sure your image is named profile.jpg or change the src below */
     .hero-image img {
       width: 100%;
       max-width: 350px;
@@ -190,19 +196,12 @@
       display: block;
     }
 
-    /* Footer & Logo */
+    /* Footer */
     footer {
       background-color: #2c3e50;
       color: #fff;
       text-align: center;
       padding: 50px 10%;
-    }
-
-    /* Make sure your logo is named logo.png or change the src below */
-    .footer-logo {
-      max-width: 150px;
-      margin-bottom: 20px;
-      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
     }
 
     .social-links {
@@ -239,7 +238,6 @@
 
       nav ul {
         display: none;
-        /* Consider adding a hamburger menu for mobile later */
       }
     }
   </style>
@@ -248,13 +246,16 @@
 <body>
 
   <nav>
-    <div class="logo">M. Maravgakis</div>
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#skills">Skills</a></li>
     </ul>
+
+    <div class="nav-right-banner">
+      <img src="logo.png" alt="Επιχορήγηση Ελλάδα 2.0 Ψηφιακά Εργαλεία">
+    </div>
   </nav>
 
   <header class="hero">
@@ -380,8 +381,6 @@
   </section>
 
   <footer>
-    <img src="logo.png" alt="Maravgakis Logo" class="footer-logo">
-
     <div class="social-links">
       <a href="https://github.com/MichaelMarav" target="_blank">GitHub</a> |
       <a href="https://www.linkedin.com/in/maravgakis/" target="_blank">LinkedIn</a> |
